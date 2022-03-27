@@ -1,10 +1,14 @@
 <p align="center"><a href="https://github.com/MansaGroup/kanedama" target="blank"><img src="../.github/assets/logo.png" width="80" alt="Mansa's Logo" /></a></p>
 <h1 align="center">Mansa's data science technical test</h1>
-<p align="center">El Mahdi L'KOTBI</b> 💜</p>
+<p align="center">El Mahdi L'KOTBI</b></p>
 
 # Introduction
 
 The aim of this technical test is to first build a machine learning model that is able to predict next month outgoing given the past 6 months of transactions of a given account, and then deploy it using FastAPI.
+
+# Remarks
+- I have added the possibility to run the setup (server + test) as docker containers, if you wish to use it, make sure to install docker
+- Python version : 3.6.9
 
 # Usage
 - Run 'make server' in order to run the server as a standalone
