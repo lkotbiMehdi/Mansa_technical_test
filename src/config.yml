@@ -1,2 +1,2 @@
 model:
- modelPath : "../bin/model_reg.pkl"
+ modelPath : "./bin/model_reg.pkl"

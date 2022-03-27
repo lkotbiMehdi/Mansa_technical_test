@@ -1,0 +1,23 @@
+version: '3'
+services:
+  server:
+    image: server
+    build:
+      context: ./src
+    container_name: server
+    restart: always
+    networks:
+      - default
+    ports:
+      - "8000:8000"
+  test:
+    image: test
+    build:
+      context: ./test
+    container_name: test
+    depends_on: 
+      - server
+    networks:
+      - default 
+    environment:
+      - HOST=server

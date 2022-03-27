@@ -2,9 +2,10 @@ import json
 from datetime import date
 import pickle
 import requests
+from environs import Env
 
 
-def test_predict():
+def test_predict(host):
     """
     Test the predict route with test data
     """
@@ -27,7 +28,7 @@ def test_predict():
     print(test_data)
 
     response = requests.post(
-        "http://127.0.0.1:8000/predict", data=json.dumps(test_data)
+        f"http://{host}:8000/predict", data=json.dumps(test_data)
     )
 
     print("Response: ")
@@ -37,9 +38,9 @@ def test_predict():
 
     # ----------REAL DATA-----------
 
-    data = pickle.load(open('../bin/api_test_data.pkl', 'rb'))
+    data = pickle.load(open('./data/api_test_data.pkl', 'rb'))
     unprocessable = []
-    response_codes = pickle.load(open('../bin/test_api_response_codes.pkl', 'rb'))
+    response_codes = pickle.load(open('./data/test_api_response_codes.pkl', 'rb'))
     for (account, transactions), response_code in zip(data, response_codes):
         test_data = {
             "account": account,
@@ -49,7 +50,7 @@ def test_predict():
         print(test_data)
         
         response = requests.post(
-            "http://127.0.0.1:8000/predict", data=json.dumps(test_data)
+            f"http://{host}:8000/predict", data=json.dumps(test_data)
         )
         
         print("Response: ")
@@ -58,4 +59,7 @@ def test_predict():
         assert response.status_code == response_code
     
 if __name__ == "__main__":
-    test_predict()
+    env = Env()
+    env.read_env(".env")
+    host = env.str("HOST")
+    test_predict(host)
