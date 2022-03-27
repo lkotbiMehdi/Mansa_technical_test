@@ -15,9 +15,9 @@ NB : in case of problems installing docker compose, run the following command :
 ```pip3 install --upgrade --force-reinstall --no-cache-dir docker-compose && ln -sf /usr/local/bin/docker-compose /usr/bin/docker-compose```
 
 # Usage
-- Run ```make server``` in order to run the server as a standalone
-- Run ```make test``` in order to run the test script (the server needs to be on)
-- Run ```make compose``` in order to run docker-composer pipeline (run server container -> run test container)
+- Run ```uvicorn server:app``` from the src/ folder in order to run the server as a standalone
+- Run ```python3 test_main.py``` from the test/ folder in order to run the test script (the server needs to be on)
+- Run ```docker compose up``` in order to run docker-composer pipeline (run server container -> run test container), the test will run for a minute and then if all sent events are treated the correct way, it passes.  
 
 # Mythology
 ## Data science part
