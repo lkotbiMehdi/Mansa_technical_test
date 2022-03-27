@@ -19,7 +19,7 @@ NB : in case of problems installing docker compose, run the following command :
 - Run ```python3 test_main.py``` from the test/ folder in order to run the test script (the server needs to be on)
 - Run ```docker compose up``` in order to run docker-composer pipeline (run server container -> run test container), the test will run for a minute and then if all sent events are treated the correct way, it passes.  
 
-# Mythology
+# Methodology
 ## Data science part
 
 Here is the data processing pipeline that i've applied to the original data (transactions.csv, account.csv) : 
@@ -30,10 +30,10 @@ Here is the data processing pipeline that i've applied to the original data (tra
 
 - I used the XGboost Regression model with Bayesian optimization for the hyper parameters, here are the metrics on the test data : 
 
-explained_variance_score 0.9815143216193105 <br>
-mean_absolute_error 541.7654876333748 <br>
-squared_mean_squared_error 1436.3253874883846 <br>
-r2_score 0.9814954812671071 <br>
+explained_variance_score : 98% <br>
+mean_absolute_error : 541.7654876333748 <br>
+squared_mean_squared_error : 1436.3253874883846 <br>
+r2_score : 98% <br>
 
 
 I have based my analysis on this hypothesis : 1 month is a 30 days period.
