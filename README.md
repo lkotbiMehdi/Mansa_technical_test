@@ -1,4 +1,3 @@
-<p align="center"><a href="https://github.com/MansaGroup/kanedama" target="blank"><img src="../.github/assets/logo.png" width="80" alt="Mansa's Logo" /></a></p>
 <h1 align="center">Mansa's data science technical test</h1>
 <p align="center">El Mahdi L'KOTBI</b></p>
 
