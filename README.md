@@ -26,7 +26,7 @@ Here is the data processing pipeline that i've applied to the original data (tra
 - Removing duplicates (A duplicate in this case are two rows with exactly the same values)
 - Conserving only account ids with more than 180 days of history
 - Feature engineering : outgoing_0, outgoing_1,	outgoing_2,	outgoing_3,	outgoing_4,	ingoing_0,	ingoing_1,	ingoing_2,	ingoing_3,	ingoing_4,	balance_0,	balance_1,	balance_2,	balance_3,	balance_4 (I took only 5 months of history for training in order to keep the 6th month for the target variable calculation)
-![plot](.git/ressources/corr.png)
+![plot](.ressources/corr.png)
 
 - I used the XGboost Regression model with Bayesian optimization for the hyper parameters, here are the metrics on the test data : 
 
