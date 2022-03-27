@@ -2,9 +2,12 @@ from RegressionModel import RegressionModel
 from pyDanticObjects import predict, RequestPredict
 from fastapi import FastAPI
 
-    
+import yaml
+
+config = yaml.safe_load(open('config.yml'))
+
 app = FastAPI()
-model = RegressionModel("../data/model_reg.pkl")
+model = RegressionModel(config['model']['modelPath'])
     
 @app.post("/predict")
 async def root(predict_body: RequestPredict):

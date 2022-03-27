@@ -1,0 +1,2 @@
+model:
+ modelPath : "../bin/model_reg.pkl"

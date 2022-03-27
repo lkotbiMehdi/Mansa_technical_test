@@ -37,9 +37,9 @@ def test_predict():
 
     # ----------REAL DATA-----------
 
-    data = pickle.load(open('../data/api_test_data.pkl', 'rb'))
+    data = pickle.load(open('../bin/api_test_data.pkl', 'rb'))
     unprocessable = []
-    response_codes = pickle.load(open('../data/test_api_response_codes.pkl', 'rb'))
+    response_codes = pickle.load(open('../bin/test_api_response_codes.pkl', 'rb'))
     for (account, transactions), response_code in zip(data, response_codes):
         test_data = {
             "account": account,
