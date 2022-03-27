@@ -6,6 +6,11 @@
 
 The aim of this technical test is to first build a machine learning model that is able to predict next month outgoing given the past 6 months of transactions of a given account, and then deploy it using FastAPI.
 
+# Usage
+- Run 'make server' in order to run the server as a standalone
+- Run 'make test' in order to run the test script (the server needs to be on)
+- Run 'make compose' in order to run docker-composer pipeline (run server container -> run test container)
+
 # Mythology
 ## Data science part
 
