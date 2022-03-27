@@ -3,6 +3,7 @@ from datetime import date
 import pickle
 import requests
 from environs import Env
+from os import system
 
 
 def test_predict(host):
@@ -63,3 +64,6 @@ if __name__ == "__main__":
     env.read_env(".env")
     host = env.str("HOST")
     test_predict(host)
+
+    system('clear')
+    print('Test passed successfully !')
